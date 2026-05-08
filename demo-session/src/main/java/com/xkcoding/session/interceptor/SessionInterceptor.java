@@ -28,5 +28,6 @@ public class SessionInterceptor extends HandlerInterceptorAdapter {
         String url = "/page/login?redirect=true";
         response.sendRedirect(request.getContextPath() + url);
         return false;
+        // test dlp
     }
 }
