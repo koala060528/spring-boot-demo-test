@@ -18,18 +18,18 @@ import javax.servlet.http.HttpSession;
  */
 @Component
 public class SessionInterceptor extends HandlerInterceptorAdapter {
-    @Override
-    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        HttpSession session = request.getSession();
-        if (session.getAttribute(Consts.SESSION_KEY) != null) {
-            return true;
-        }
-        // 跳转到登录页
-        String url = "/page/login?redirect=true";
-        response.sendRedirect(request.getContextPath() + url);
-        return false;
-        // test dlp
-      //test dlp2
-      // test dlp3
+  @Override
+  public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+    HttpSession session = request.getSession();
+    if (session.getAttribute(Consts.SESSION_KEY) != null) {
+      return true;
     }
+    // 跳转到登录页
+    String url = "/page/login?redirect=true";
+    response.sendRedirect(request.getContextPath() + url);
+    return false;
+    // test dlp
+    //test dlp2
+    // test dlp3
+  }
 }
